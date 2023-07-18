@@ -1,0 +1,16 @@
+
+<div class="container">
+      <ul class="d-flex justify-content-evenly p-4 g-2" >
+  <% @rooms.each do |room| %>
+  <li class="group-list-item">
+    <div class="card">
+      <h1><%= room.room_number %></h1>
+      <p> <%= room.description %></p>
+      <p> <%= room.price_per_night %></p>
+      <p> <%= room.capacity %></p>
+
+      <p> <%= link_to "View Room", room_path(room), class: "btn btn-primary" %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>

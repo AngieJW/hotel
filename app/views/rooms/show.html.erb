@@ -1,0 +1,22 @@
+<div class="room">
+  <h1>Room Details</h1>
+
+  <h1><%= @room.room_number %></h1>
+  <p><%= @room.description %></p>
+  <p><%= @room.price_per_night %></p>
+  <p><%= @room.capacity %></p>
+  <p><%= @room.availability %></p>
+
+
+  <h2>Book this room</h2>
+<%= simple_form_for([@room, @booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, 'Book Room', class: 'btn btn-primary' %>
+<% end %>
+
+
+  <p><%= link_to "Back to Rooms", rooms_path %></p>
+
+
+</div>
